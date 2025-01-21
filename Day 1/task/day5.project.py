@@ -22,3 +22,31 @@ for letter in range(0,nr_symbols):
     password += random.choice(symbols)
 
 print(password)
+
+# hard version
+
+hard_password = []
+
+for char in range(0,nr_letters):
+    hard_password.append(random.choice(letters))
+
+for char in range(0,nr_numbers):
+    hard_password.append(random.choice(numbers))
+
+for char in range(0,nr_symbols):
+    hard_password.append(random.choice(symbols))
+
+
+
+print(hard_password)
+# we cant do this because random.shuffle modifies the list in-place
+# and returns None
+# shuffle_list = random.shuffle(hard_password)
+random.shuffle(hard_password)
+
+password = ""
+for char in hard_password:
+    password += char
+print(password)
+
+
