@@ -10,16 +10,12 @@ print(logo)
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
-# For each letter in the chosen_word, add a _ to placeholder
 placeholder = ""
-
 word_length = len(chosen_word)
 for position in range(word_length):
     placeholder += "_"
 print("Word to guess: " + placeholder)
 
-# The loop should only stop once the user has guessed all the letters in the chosen_word.
-# At that point display has no more blanks ("_"). Then you can tell the user they've won.
 game_over = False
 correct_letters = []
 
@@ -37,7 +33,6 @@ while not game_over:
         if letter == guess:
             display += letter
             correct_letters.append(guess)
-            #previous guesses are added to the display String.
         elif letter in correct_letters:
             display += letter
         else:
@@ -51,7 +46,7 @@ while not game_over:
 
         if lives == 0:
             game_over = True
-           # print statement below to give the user the correct word they were trying to guess
+
             print(f"***********************IT WAS {chosen_word}! YOU LOSE**********************")
 
     if "_" not in display:
