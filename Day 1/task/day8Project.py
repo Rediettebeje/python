@@ -10,6 +10,7 @@ def calculate_love_score(name1, name2):
     combined_names = name1 + name2
     lower_names = combined_names.lower()
 
+    # The count() method returns the number of elements with the specified value.
     t = lower_names.count("t")
     r = lower_names.count("r")
     u = lower_names.count("u")
@@ -28,3 +29,4 @@ def calculate_love_score(name1, name2):
 
 
 calculate_love_score(name1 = "Angela Yu", name2 = "Jack Bauer")
+
