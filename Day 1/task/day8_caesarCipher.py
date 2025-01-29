@@ -13,6 +13,9 @@ def encrypt(original_text,shift_amount):
 
 # inside the 'encrypt()' function, shift each letter of the 'original_text' forwards in the alphabet
 #  by the shift amount and print the encrypted text.
+   # index()built in function, allows us to find out the position of an item in a list. e.g.
+    # fruits = ["Apple", "Pear", "Orange"]
+    # fruits.index("Pear") #1
     for letter in original_text:
         index_of_letter = alphabet.index(letter)
         new_position = index_of_letter + shift_amount
