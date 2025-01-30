@@ -33,5 +33,20 @@ def encrypt(original_text,shift_amount):
 # Call the 'encrypt()' function and pass in the user inputs. You should be able to test the code and encrypt a
 #  message.
 
+
+
+# Create a function called 'decrypt()' that takes 'original_text' and 'shift_amount' as inputs.
+# shift each letter of the 'original_text' *backwards* in the alphabet
+# #  by the shift amount and print the decrypted text.
+def decrypt(original_text, shift_amount):
+    decrypted_text = ""
+    for letter in original_text:
+        index_of_letter = alphabet.index(letter)
+        new_position = index_of_letter - shift_amount
+        new_position %= len(alphabet)  # 0-25
+        decrypted_text += alphabet[new_position]
+    print(f"Here is the decoded result: {decrypted_text}")
+
+
 # encrypt("hello",1)
 encrypt(text,shift)
