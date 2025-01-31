@@ -50,10 +50,11 @@ def decrypt(original_text, shift_amount):
 # Combine the 'encrypt()' and 'decrypt()' functions into one function called 'caesar()'.
 def caesar(original_text, shift_amount,encode_or_decode):
     output_text = ""
+    if encode_or_decode == "decode":
+            shift_amount *= -1
 
     for letter in original_text:
-        if encode_or_decode == "decode":
-            shift_amount *= -1
+
 
         index_of_letter = alphabet.index(letter)
         new_position = index_of_letter + shift_amount
