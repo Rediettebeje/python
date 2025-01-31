@@ -47,19 +47,23 @@ def decrypt(original_text, shift_amount):
         decrypted_text += alphabet[new_position]
     print(f"Here is the decoded result: {decrypted_text}")
 
+# What happens if the user enters a number/symbol/space?
 # Combine the 'encrypt()' and 'decrypt()' functions into one function called 'caesar()'.
 def caesar(original_text, shift_amount,encode_or_decode):
     output_text = ""
+
     if encode_or_decode == "decode":
             shift_amount *= -1
 
     for letter in original_text:
+        if letter not in alphabet:
+            output_text += letter
+        else:
+            index_of_letter = alphabet.index(letter)
+            new_position = index_of_letter + shift_amount
+            new_position %= len(alphabet)  # 0-25
+            output_text += alphabet[new_position]
 
-
-        index_of_letter = alphabet.index(letter)
-        new_position = index_of_letter + shift_amount
-        new_position %= len(alphabet)  # 0-25
-        output_text += alphabet[new_position]
     print(f"Here is the {encode_or_decode}d result: {output_text}")
 # encrypt("hello",1)
 caesar(text,shift,direction)
