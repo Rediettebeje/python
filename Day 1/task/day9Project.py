@@ -11,6 +11,8 @@ is_there = True
 while is_there:
     askUser =  input("Are there any other bidders? Type 'yes or 'no'.\n").lower()
     if askUser == "yes":
+        # There are several ways of clearing the output. The easiest is to simply
+        # print "\n" many times so that the output scrolls down many lines.
         print( "\n" * 100)
         name = input("What is your name?: ")
         price = int(input("What is your bid?: $"))
