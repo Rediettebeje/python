@@ -2,6 +2,7 @@ def is_leap_year(year):
     if year % 4 == 0:
         if year % 100 == 0:
             if year % 400 == 0:
+                # Functions terminate at the return keyword
                 return True
             else:
                 return False
