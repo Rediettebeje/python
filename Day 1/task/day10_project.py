@@ -23,6 +23,9 @@ def calculator():
     first_no = float(input("What is the first number?: "))
     while should_accumulate:
 
+        for symbol in my_dic:
+            print(symbol)
+
         ope_symbol = input("Pick an operation: ")
         second_no = float(input("What is the second number?: "))
 
