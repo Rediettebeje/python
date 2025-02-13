@@ -25,6 +25,26 @@ def calculate_score(nums):
         nums.append(1)
     return sum(nums)
 
+is_game_over = False
+while  not is_game_over:
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
+
+    print(user_score)
+    print(computer_score)
+    # print(user_cards)
+
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+        is_game_over = True
+    else:
+        ask_user = input("Type 'y' to get another card, type 'n' to pass: ").lower()
+        if ask_user == "y":
+            user_cards.append(deal_card())
+            print(user_cards)
+        else:
+            is_game_over = True
+
+    print(user_score)
 
 
 
