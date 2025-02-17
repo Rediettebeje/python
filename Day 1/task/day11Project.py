@@ -11,6 +11,8 @@ def deal_card():
 
 user_cards = []
 computer_cards = []
+computer_score = -1
+user_score= -1
 
 for _ in range(2):
     user_cards.append(deal_card())
@@ -24,6 +26,23 @@ def calculate_score(nums):
         nums.remove(11)
         nums.append(1)
     return sum(nums)
+
+def compare(u_score, c_score):
+    """Compares the user score u_score against the computer score c_score."""
+    if u_score == c_score:
+        return "Draw 🙃"
+    elif c_score == 0:
+        return "Lose, opponent has Blackjack 😱"
+    elif u_score == 0:
+        return "Win with a Blackjack 😎"
+    elif u_score > 21:
+        return "You went over. You lose 😭"
+    elif c_score > 21:
+        return "Opponent went over. You win 😁"
+    elif u_score > c_score:
+        return "You win 😃"
+    else:
+        return "You lose 😤"
 
 is_game_over = False
 while  not is_game_over:
@@ -44,7 +63,10 @@ while  not is_game_over:
         else:
             is_game_over = True
 
-    print(user_score)
+while computer_score != 0 and computer_score < 17:
+    computer_cards.append(deal_card())
+    computer_score = calculate_score(computer_cards)
+
 
 
 
