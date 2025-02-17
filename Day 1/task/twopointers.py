@@ -16,7 +16,9 @@ def check_for_target(nums,target):
     while left < right:
         current = nums[left] + nums[right]
         if current == target:
-            print(nums[left],nums[right])
+            print(nums[left],nums[right]) #  to print the numbers
+            print(left, right) # i to print indices
+            print(left + 1, right + 1)  # Convert to 1-based index
             return True
 
         elif current > target:
